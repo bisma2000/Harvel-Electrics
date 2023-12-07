@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poppins", serif;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('sign.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 500px;
+  padding: 50px;
+  background-color: white;
+  box-shadow: 0 0 30px rgba(208, 143, 3, 0.8);
+  border-radius: 20px;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  font-size: 4em;
+  text-align: center;
+  color: #232220;
+  text-shadow: 5px 5px #caa169;
+  text-transform: uppercase ;
+}
+
+.form-group {
+  margin: 20px 0;
+}
+
+input {
+  font-size: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+label {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+input:not([type="submit"]) {
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+}
+
+input[type="submit"] {
+  background-color: rgb(131, 88, 8);
+  color: rgb(236, 234, 234);
+  font-size: 20px;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: rgb(20, 17, 10);
+  color: aliceblue;
+  transform: scale(1.2);
+  transition: all 3s;
+}
+
+input[type="submit"]:active {
+  background-color: rgb(28, 80, 63);
+}
+
+.error #emailError,
+.error #passwordError {
+  color: red;
+}
+.error input {
+  border: 2px solid red;
+}
+
+.msg {
+  display: none;
+}
+
+  @media (max-width:600px){
+    .form-wrapper{
+        max-width: 300px;
+    }
+}

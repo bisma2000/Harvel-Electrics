@@ -1,0 +1,164 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contact-us.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ </head>
+ <body>    
+    <div class="contactUs">
+        <div class="title">
+            <h2>Get In Touch</h2>
+        </div>
+
+         <!-- -----------form box------------- -->
+        <div class="box">
+            <div  class="contact form">
+                <h3>Send a Message</h3>
+                <form action="">
+                    <div class="formbox">
+                        <div class="row50">
+                            <div class="inputbox">
+                                <span>First Name</span>
+                                <input type="text" placeholder="John" onkeyup = "Validate(this)" required>
+                            </div>
+                            <div class="inputbox">
+                                <span>Last Name</span>
+                                <input type="text" placeholder="doe" onkeyup = "Validate(this)" required>
+                            </div>
+                        </div>
+                        <div class="row50">
+                            <div class="inputbox">
+                                <span>Email</span>
+                                <input type="text" placeholder="Johndoe@email.com" onchange="email_validate(this.value);" required>
+                            </div>
+                            <div class="inputbox">
+                                <span>Mobile</span>
+                                <input required type="text" onkeyup="validatephone(this);" placeholder="+91 987 564 4321">
+                            </div>
+                        </div>
+                        <div class="row100">
+                            <div class="inputbox">
+                                <span>Message</span>
+                                <textarea name="" id="" cols="30" rows="10" placeholder="Write your Message here...."></textarea>
+                            </div>
+                        </div>
+                        <div class="row100">
+                            <div class="inputbox">
+                                <input type="submit" value="send" class="submit">
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+                <script type="text/javascript">
+                    document.getElementById("field_terms").setCustomValidity("Please indicate that you accept the Terms and Conditions");
+                  </script>
+                  
+            </div>
+
+            <!-- -----------info box------------- -->
+            <div class="contact info">
+                <h3>Contact Info</h3>
+                <div class="infobox">
+                    <div>
+                        <span><ion-icon name="location"></ion-icon></span>
+                        <p>North Nazimabad , Karachi <br> PAKISTAN</p>
+                    </div>
+                    <div>
+                        <span><ion-icon name="mail"></ion-icon></span>
+                        <a href="mailto:HarvelElectric@gmail.com" id="email status">HarvelElectric@gmail.com</a>
+                    </div>
+                    <div>
+                        <span><ion-icon name="call"></ion-icon></span>
+                        <a href="tel:+92 300 7363454">+92 300 7363454</a>
+                    </div>
+             <!-- -----------social media links------------- -->                   
+                    <ul class="sci">
+                        <li><a href=""><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li><a href=""><ion-icon name="logo-twitter"></ion-icon></a></li>
+                        <li><a href=""><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                        <li><a href=""><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- -----------map box------------- -->
+            <div class="contact map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115755.46457595176!2d66.91411854335936!3d24.
+                9539225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb340854b3b404d%3A0x8aef7a459e4bda74!2sElectro%20World!5e
+                0!3m2!1sen!2s!4v1697801803200!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    {
+        //Store the password field objects into variables ...
+        var pass1 = document.getElementById('pass1');
+        var pass2 = document.getElementById('pass2');
+        //Store the Confimation Message Object ...
+        var message = document.getElementById('confirmMessage');
+        //Set the colors we will be using ...
+        var goodColor = "#66cc66";
+        var badColor = "#ff6666";
+        //Compare the values in the password field 
+        //and the confirmation field
+        if(pass1.value == pass2.value){
+            //The passwords match. 
+            //Set the color to the good color and inform
+            //the user that they have entered the correct password 
+            pass2.style.backgroundColor = goodColor;
+            message.style.color = goodColor;
+            message.innerHTML = "Passwords Match"
+        }else{
+            //The passwords do not match.
+            //Set the color to the bad color and
+            //notify the user.
+            pass2.style.backgroundColor = badColor;
+            message.style.color = badColor;
+            message.innerHTML = "Passwords Do Not Match!"
+        }
+    } 
+    function validatephone(phone) 
+    {
+        var maintainplus = '';
+        var numval = phone.value
+        if ( numval.charAt(0)=='+' )
+        {
+            var maintainplus = '';
+        }
+        curphonevar = numval.replace(/[\\A-Za-z!"£$%^&\,*+_={};:'@#~,.Š\/<>?|`¬\]\[]/g,'');
+        phone.value = maintainplus + curphonevar;
+        var maintainplus = '';
+        phone.focus;
+    }
+    // validates text only
+    function Validate(txt) {
+        txt.value = txt.value.replace(/[^a-zA-Z-'\n\r.]+/g, '');
+    }
+    // validate email
+    function email_validate(email)
+    {
+    var regMail = /^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,3})$/;
+    
+        if(regMail.test(email) == false)
+        {
+        document.getElementById("status").innerHTML= "<span class='warning'>Email address is not valid yet.</span>";
+        }
+        else
+        {
+        document.getElementById("status").innerHTML	= "<span class='valid'>Thanks, you have entered a valid Email address!</span>";	
+        }
+    }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+ </body>
+ </html>

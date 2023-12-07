@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <meta name="author" content="Rajamanickam"><link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css'>
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.0/css/all.min.css'><link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="product.css">
+   
+
+</head>
+<body>
+           <!-- -----------------Bill------------- -->
+           <div id="id01">
+            <div class="wrapper">
+              <div class="bill-content">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+              <h1 class="box-title">Checkout</h1>
+              <div class="price-total">
+                <span>PAY</span>
+                <div class="pay-last">$ 0</div>
+              </div>
+              <form>
+                
+                <div class="form-text">
+                  <label>Card Number</label>
+                  <input name="card-number" type="text" required placeholder="03374623878">
+                </div>
+                <div class="form-text">
+                  <label>Card Verification Value</label>
+                  <input name="name" type="text" placeholder="CVV" required>
+                </div>
+                <div class="form-text" id="col01">
+                  <label>Expiry Date</label>
+                  <input name="card-number" type="text" placeholder="MM/YY" maxlength="3" required>
+                </div>
+                <div class="form-text"  id="col02">
+                  <label>Coupon Code</label>
+                  <input name="card-number" type="text">
+                </div>
+                
+                <button id="end">PAY NOW</button>
+              </form>
+                <button id="coupon">Get coupon code</button>
+              </div>
+            </div>
+            </div>
+            
+            
+            
+              <script>
+                //------------------BILL----------------------
+            
+            $(document).ready(function(){
+              $('#coupon').on('click',function(){
+                alert("minhquanghust.blogspot.com Coupon Code:" + '\n' + "25% off: 0511Q-1601CV" +'\n' + "15% off: 0511Q-1701NA" + '\n' + "10% off: 0511Q-1901QA")
+              });
+            })
+              </script>
+            
+   <!-- partial -->
+     <script src='https://code.jquery.com/jquery-3.6.3.js'></script>
+   
+</body>
+</html>
